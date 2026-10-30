@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              teal: { DEFAULT: "#00a88f" },
+              dark: "#012a2b",
+              lime: "#c8f400",
+            },
+            fontFamily: { display: ["Anton", "Impact", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <title>SI01A-ICBI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-base="" class="bg-white text-slate-900">
+    <div id="site-header"></div>
+    <section
+      id="hero"
+      class="relative h-screen min-h-[620px] overflow-hidden bg-dark text-white"
+    ></section>
+    <section id="profile" class="py-20 lg:py-28">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-12">
+        <div class="reveal mb-12">
+          <span class="text-teal font-bold uppercase tracking-widest text-sm"
+            >Profile Kelas</span
+          >
+          <h2 class="font-display uppercase text-4xl lg:text-6xl mt-2">
+            Tentang SI01A
+          </h2>
+          <p class="text-slate-600 max-w-2xl mt-3">
+            SI01A adalah kelas Sistem Informasi yang berisi mahasiswa berbakat
+            dan solid, berfokus pada teknologi, bisnis, dan kolaborasi.
+          </p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div
+            class="reveal ibox group relative overflow-hidden bg-white border border-slate-200 p-8 lg:p-10 min-h-[320px] transition-colors duration-500 hover:bg-dark hover:text-white"
+          >
+            <span
+              class="absolute right-5 top-1 font-display text-8xl text-slate-100 group-hover:text-white/10 transition-colors duration-500"
+              >01</span
+            ><i
+              class="bi bi-people text-4xl text-teal group-hover:text-lime transition-colors"
+            ></i>
+            <h3 class="font-display uppercase tracking-wide text-3xl mt-6 mb-4">
+              About
+            </h3>
+            <p
+              class="text-slate-600 group-hover:text-white/80 transition-colors"
+            >
+              Kelas dengan semangat belajar tinggi, saling membantu, dan aktif
+              dalam kegiatan akademik maupun non-akademik.
+            </p>
+            <span
+              class="absolute left-0 bottom-0 h-1.5 w-0 bg-lime group-hover:w-full transition-all duration-500"
+            ></span>
+          </div>
+          <div
+            class="reveal ibox group relative overflow-hidden bg-white border border-slate-200 p-8 lg:p-10 min-h-[320px] transition-colors duration-500 hover:bg-dark hover:text-white"
+          >
+            <span
+              class="absolute right-5 top-1 font-display text-8xl text-slate-100 group-hover:text-white/10 transition-colors duration-500"
+              >02</span
+            ><i
+              class="bi bi-eye text-4xl text-teal group-hover:text-lime transition-colors"
+            ></i>
+            <h3 class="font-display uppercase tracking-wide text-3xl mt-6 mb-4">
+              Visi
+            </h3>
+            <p
+              class="text-slate-600 group-hover:text-white/80 transition-colors"
+            >
+              Menjadi kelas unggul, inovatif, dan berintegritas yang melahirkan
+              lulusan siap bersaing di era digital.
+            </p>
+            <span
+              class="absolute left-0 bottom-0 h-1.5 w-0 bg-lime group-hover:w-full transition-all duration-500"
+            ></span>
+          </div>
+          <div
+            class="reveal ibox group relative overflow-hidden bg-white border border-slate-200 p-8 lg:p-10 min-h-[320px] transition-colors duration-500 hover:bg-dark hover:text-white"
+          >
+            <span
+              class="absolute right-5 top-1 font-display text-8xl text-slate-100 group-hover:text-white/10 transition-colors duration-500"
+              >03</span
+            ><i
+              class="bi bi-bullseye text-4xl text-teal group-hover:text-lime transition-colors"
+            ></i>
+            <h3 class="font-display uppercase tracking-wide text-3xl mt-6 mb-4">
+              Misi
+            </h3>
+            <ul
+              class="text-slate-600 group-hover:text-white/80 list-disc pl-5 space-y-1 transition-colors"
+            >
+              <li>Membangun budaya belajar bersama</li>
+              <li>Mengembangkan kemampuan teknologi</li>
+              <li>Menjaga solidaritas dan transparansi</li>
+            </ul>
+            <span
+              class="absolute left-0 bottom-0 h-1.5 w-0 bg-lime group-hover:w-full transition-all duration-500"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="members" class="py-20 lg:py-28 bg-slate-100">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-12">
+        <div class="reveal text-center max-w-2xl mx-auto mb-14">
+          <span class="text-teal font-bold uppercase tracking-widest text-sm"
+            >Our Team</span
+          >
+          <h2 class="font-display uppercase text-4xl lg:text-6xl mt-2">
+            Team of SI01A
+          </h2>
+          <div class="w-14 h-1 bg-teal mx-auto my-5"></div>
+          <p class="text-slate-600">
+            Kami menyukai apa yang kami pelajari dan menjalaninya dengan penuh
+            semangat. Kenalan dengan seluruh mahasiswa SI01A.
+          </p>
+          <a
+            href="halaman/members.html"
+            class="inline-flex items-center gap-2 font-semibold border-2 border-dark rounded-full px-6 py-3 mt-6 hover:bg-dark hover:text-white transition"
+            >Semua Members <i class="bi bi-arrow-right"></i
+          ></a>
+        </div>
+        <div
+          id="members-preview"
+          class="grid gap-x-6 gap-y-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        ></div>
+      </div>
+    </section>
+    <section id="akademik" class="py-20 lg:py-28">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-12">
+        <div class="reveal mb-10">
+          <h2 class="font-display uppercase text-4xl lg:text-6xl">
+            Akademik &amp; Perkuliahan
+          </h2>
+          <p class="text-slate-600 mt-2">
+            Informasi seputar perkuliahan kelas SI01A.
+          </p>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal bg-dark text-white rounded p-8">
+            <i class="bi bi-calendar3 text-3xl text-lime"></i>
+            <h3 class="font-bold text-xl my-3">Jadwal Kuliah</h3>
+            <p class="text-white/70">Jadwal mingguan semua mata kuliah.</p>
+          </div>
+          <div class="reveal bg-dark text-white rounded p-8">
+            <i class="bi bi-journal-bookmark text-3xl text-lime"></i>
+            <h3 class="font-bold text-xl my-3">Mata Kuliah</h3>
+            <p class="text-white/70">
+              Daftar mata kuliah &amp; SKS semester berjalan.
+            </p>
+          </div>
+          <div class="reveal bg-dark text-white rounded p-8">
+            <i class="bi bi-person-workspace text-3xl text-lime"></i>
+            <h3 class="font-bold text-xl my-3">Dosen</h3>
+            <p class="text-white/70">Dosen pengampu dan dosen wali.</p>
+          </div>
+          <div class="reveal bg-dark text-white rounded p-8">
+            <i class="bi bi-alarm text-3xl text-lime"></i>
+            <h3 class="font-bold text-xl my-3">Kalender</h3>
+            <p class="text-white/70">UTS, UAS, dan tenggat tugas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-teal text-dark py-20 text-center">
+      <div class="reveal max-w-3xl mx-auto px-5">
+        <h2 class="font-display uppercase text-4xl lg:text-6xl text-white">
+          Kas Kelas
+        </h2>
+        <p class="text-white/90 my-4 text-lg">
+          Pantau pemasukan dan pengeluaran kas secara transparan.
+        </p>
+        <a
+          id="kas-btn"
+          href="#"
+          target="_blank"
+          rel="noopener"
+          class="group inline-flex items-center gap-6 bg-lime text-dark font-semibold pl-7 pr-1.5 py-1.5 rounded-full text-lg hover:bg-white transition mt-3"
+          >Buka Web App Kas<span
+            class="w-12 h-12 rounded-full bg-white grid place-items-center"
+            ><i class="bi bi-arrow-up-right text-xl"></i></span
+        ></a>
+      </div>
+    </section>
+    <section id="news" class="py-20 lg:py-28 bg-slate-100">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-12">
+        <div class="flex items-end justify-between gap-4 mb-10">
+          <h2 class="font-display uppercase text-4xl lg:text-6xl">
+            Latest Announcements
+          </h2>
+          <div class="flex gap-2 shrink-0">
+            <button
+              id="prev"
+              aria-label="Sebelumnya"
+              class="w-12 h-12 rounded-full border-2 border-dark grid place-items-center text-xl hover:bg-dark hover:text-white transition disabled:opacity-30 disabled:pointer-events-none"
+            >
+              <i class="bi bi-arrow-left"></i></button
+            ><button
+              id="next"
+              aria-label="Berikutnya"
+              class="w-12 h-12 rounded-full border-2 border-dark grid place-items-center text-xl hover:bg-dark hover:text-white transition disabled:opacity-30 disabled:pointer-events-none"
+            >
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <div id="news-view" class="overflow-x-auto snap-x snap-mandatory no-sb">
+          <div id="news-track" class="flex gap-6 max-md:gap-4"></div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="py-20 lg:py-28">
+      <div
+        class="max-w-[1400px] mx-auto px-5 lg:px-12 grid gap-12 md:grid-cols-2"
+      >
+        <div class="reveal">
+          <h2 class="font-display uppercase text-4xl lg:text-6xl">Contact</h2>
+          <p class="text-slate-600 mt-3">
+            Ada pertanyaan atau ingin berkolaborasi? Hubungi kami.
+          </p>
+          <ul class="mt-6 space-y-3 text-lg">
+            <li>
+              <i class="bi bi-envelope text-teal me-3"></i>si01a@gmail.com
+            </li>
+            <li>
+              <i class="bi bi-geo-alt text-teal me-3"></i>Sukabumi, Jawa Barat
+            </li>
+            <li>
+              <i class="bi bi-whatsapp text-teal me-3"></i>+62 800-0000-0000
+            </li>
+          </ul>
+        </div>
+        <form id="cf" class="reveal grid gap-4">
+          <input
+            required
+            placeholder="Nama"
+            class="border border-slate-300 rounded p-3 focus:outline-teal"
+          /><input
+            required
+            type="email"
+            placeholder="Email"
+            class="border border-slate-300 rounded p-3 focus:outline-teal"
+          /><textarea
+            required
+            rows="5"
+            placeholder="Pesan"
+            class="border border-slate-300 rounded p-3 focus:outline-teal"
+          ></textarea
+          ><button
+            class="bg-dark text-white font-semibold rounded-full py-3 hover:bg-teal transition"
+          >
+            Kirim Pesan <i class="bi bi-send ms-1"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+    <div id="site-footer"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("kas-btn").href = KAS_URL;
+    </script>
+  </body>
+</html>

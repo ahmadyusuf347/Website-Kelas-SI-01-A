@@ -1,0 +1,83 @@
+/* Style tambahan (utama memakai Tailwind CSS) */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+.no-sb {
+  scrollbar-width: none;
+}
+.no-sb::-webkit-scrollbar {
+  display: none;
+}
+.ncard {
+  flex: 0 0 calc((100% - 3rem) / 3);
+  scroll-snap-align: start;
+}
+@media (max-width: 767px) {
+  .ncard {
+    flex-basis: 100%;
+  }
+}
+.slide {
+  will-change: opacity, transform;
+}
+.hdr-solid {
+  background: rgba(1, 42, 43, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* header: animasi masuk murni CSS (tidak bisa "macet" tersembunyi) */
+#hdr {
+  animation: hdrIn 0.7s ease-out both;
+}
+@keyframes hdrIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: none;
+  }
+}
+/* hover underline menu: desktop saja */
+@media (min-width: 1024px) {
+  #menu .menu-link {
+    position: relative;
+  }
+  #menu .menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background: #c8f400;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  #menu .menu-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* members: di mobile/sentuh tombol sosmed disembunyikan, muncul saat kartu di-tap */
+@media (max-width: 767px), (hover: none) {
+  .mem {
+    cursor: pointer;
+  }
+  .mem .soc {
+    transform: translateY(100%) !important;
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+  .mem.open .soc {
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+  }
+}

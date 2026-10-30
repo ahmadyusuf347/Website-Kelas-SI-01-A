@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              teal: { DEFAULT: "#00a88f" },
+              dark: "#012a2b",
+              lime: "#c8f400",
+            },
+            fontFamily: { display: ["Anton", "Impact", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <title>Members — SI01A</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body data-base="../" class="bg-white text-slate-900">
+    <div id="site-header"></div>
+    <section
+      class="relative bg-dark bg-cover bg-center text-white pt-40 pb-20"
+      style="background-image: url(../asset/kelassi.jpeg)"
+    >
+      <div class="absolute inset-0 bg-[#0b4f4c]/80"></div>
+      <div class="relative px-5 lg:px-20">
+        <span class="text-lime uppercase tracking-widest text-sm font-bold"
+          >SI01A</span
+        >
+        <h1 id="page-title" class="font-display uppercase text-5xl lg:text-8xl">
+          Members
+        </h1>
+      </div>
+    </section>
+    <section class="py-16">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-12">
+        <div class="reveal text-center max-w-2xl mx-auto mb-14">
+          <span class="text-teal font-bold uppercase tracking-widest text-sm"
+            >Our Team</span
+          >
+          <h2 class="font-display uppercase text-4xl lg:text-6xl mt-2">
+            Team of SI01A
+          </h2>
+          <div class="w-14 h-1 bg-teal mx-auto my-5"></div>
+          <p class="text-slate-600">
+            Kami menyukai apa yang kami pelajari dan menjalaninya dengan penuh
+            semangat. Kenalan dengan seluruh mahasiswa SI01A.
+          </p>
+        </div>
+        <div class="relative max-w-md mx-auto mb-12">
+          <i
+            class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+          ></i
+          ><input
+            id="q"
+            placeholder="Cari nama atau NIM..."
+            class="w-full border border-slate-300 rounded-full py-3 pl-11 pr-5 focus:outline-teal"
+          />
+        </div>
+        <div
+          id="members-all"
+          class="grid gap-x-6 gap-y-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        ></div>
+      </div>
+    </section>
+    <div id="site-footer"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>
