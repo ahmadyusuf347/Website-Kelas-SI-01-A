@@ -26,8 +26,9 @@ body {
   will-change: opacity, transform;
 }
 .hdr-solid {
-  background: rgba(1, 42, 43, 0.96);
-  backdrop-filter: blur(8px);
+  /* tanpa backdrop-filter: properti itu membuat elemen fixed (menu mobile) di dalam header
+     berubah acuan posisi saat header berganti class, menyebabkan lompatan saat menu menutup */
+  background: rgba(1, 42, 43, 0.97);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
 }
 
@@ -79,5 +80,36 @@ body {
     transform: none !important;
     opacity: 1 !important;
     pointer-events: auto;
+  }
+}
+
+/* menu mobile: state awal diatur di CSS biasa (bukan class Tailwind) supaya sudah
+   tertutup sejak render pertama. Tailwind CDN baru siap setelah JS jalan, dan itu
+   dulu memicu animasi "close" kedua setiap pindah halaman. */
+@media (max-width: 1023px) {
+  #menu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: #012a2b;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(100%);
+    visibility: hidden;
+    will-change: transform;
+    transition:
+      transform 0.5s cubic-bezier(0.77, 0, 0.18, 1),
+      visibility 0s linear 0.5s;
+  }
+  #menu.is-open {
+    transform: none;
+    visibility: visible;
+    transition:
+      transform 0.5s cubic-bezier(0.77, 0, 0.18, 1),
+      visibility 0s;
   }
 }

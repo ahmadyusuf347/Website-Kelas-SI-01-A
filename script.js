@@ -154,7 +154,7 @@ $("#site-header").innerHTML =
   `<header id="hdr" class="fixed top-0 inset-x-0 z-50 text-white transition-colors duration-300 bg-gradient-to-b from-black/40 to-transparent">
 <div class="flex items-center justify-between h-20 px-5 lg:px-20">
 <a href="${B}index.html" class="relative z-[70]"><img src="${B}asset/Logo2.svg" alt="SI01A" class="h-10 w-auto"></a>
-<nav id="menu" class="fixed inset-0 w-full h-screen bg-dark translate-x-full transition-transform duration-500 ease-in-out z-[60] flex flex-col justify-center gap-1 px-8 sm:px-16 lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:translate-x-0 lg:flex-row lg:items-center lg:gap-8 lg:p-0">
+<nav id="menu" class="fixed inset-0 w-full h-screen bg-dark z-[60] flex flex-col justify-center gap-1 px-8 sm:px-16 lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:flex-row lg:items-center lg:gap-8 lg:p-0">
 ${NAV.map((n) => `<a href="${B + n[1]}" class="menu-link font-display uppercase tracking-wide text-4xl py-3 border-b border-white/15 max-lg:hover:text-lime lg:font-sans lg:normal-case lg:tracking-normal lg:text-[15px] lg:font-medium lg:py-1 lg:border-0">${n[0]}</a>`).join("")}
 ${cta("menu-link mt-8 inline-flex justify-center sm:hidden")}</nav>
 <div class="flex items-center gap-3 relative z-[70]">${cta("hidden sm:inline-flex")}
@@ -169,22 +169,59 @@ const onScroll = () => {
 };
 onScroll();
 addEventListener("scroll", onScroll, { passive: true });
+const CLOSE_MS = 500; // samakan dengan duration-500 pada #menu
+const isOpen = () => menu.classList.contains("is-open");
 const toggle = (f) => {
-  menu.classList.toggle("translate-x-full", !f);
+  menu.classList.toggle("is-open", f);
   burger.innerHTML = `<i class="bi bi-${f ? "x-lg" : "list"}"></i>`;
+  burger.setAttribute("aria-expanded", f);
   document.body.style.overflow = f ? "hidden" : "";
-  if (f && window.gsap)
-    gsap.from(".menu-link", {
-      x: 60,
-      opacity: 0,
-      stagger: 0.06,
-      delay: 0.25,
-      duration: 0.5,
-    });
+  if (window.gsap) {
+    gsap.killTweensOf(".menu-link"); // batalkan animasi lama supaya tidak bentrok
+    if (f)
+      gsap.fromTo(
+        ".menu-link",
+        { x: 60, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          stagger: 0.06,
+          delay: 0.25,
+          duration: 0.5,
+          clearProps: "transform,opacity",
+        },
+      );
+    else gsap.set(".menu-link", { clearProps: "transform,opacity" });
+  }
 };
-burger.onclick = () => toggle(menu.classList.contains("translate-x-full"));
-menu.querySelectorAll("a").forEach((a) => (a.onclick = () => toggle(false)));
-addEventListener("resize", () => innerWidth >= 1024 && toggle(false));
+burger.onclick = () => toggle(!isOpen());
+// normalisasi path: "/index.html" dianggap sama dengan "/"
+const normPath = (p) => p.replace(/index\.html$/, "");
+menu.querySelectorAll("a").forEach((a) => {
+  a.onclick = (e) => {
+    // desktop: perilaku link normal
+    if (innerWidth >= 1024) return;
+    // link eksternal (tab baru): cukup tutup menu
+    if (a.target === "_blank") return toggle(false);
+    e.preventDefault();
+    toggle(false); // 1) tutup menu dulu dengan mulus
+    const url = new URL(a.href, location.href);
+    const samePage =
+      url.origin === location.origin &&
+      normPath(url.pathname) === normPath(location.pathname);
+    // 2) setelah panel selesai menutup, baru scroll / pindah halaman
+    setTimeout(() => {
+      if (!samePage) return (location.href = a.href);
+      const t = url.hash && document.querySelector(url.hash);
+      if (t) t.scrollIntoView({ behavior: "smooth" });
+      else scrollTo({ top: 0, behavior: "smooth" });
+      history.pushState(null, "", url.pathname + url.hash);
+    }, CLOSE_MS - 20);
+  };
+});
+addEventListener("resize", () => {
+  if (innerWidth >= 1024 && isOpen()) toggle(false);
+});
 // ====== FOOTER ======
 const fl = (t, h) =>
   `<li><a href="${h}" class="group inline-flex items-center gap-2 py-1 hover:text-lime transition"><i class="bi bi-chevron-right text-xs opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>${t}</a></li>`;
