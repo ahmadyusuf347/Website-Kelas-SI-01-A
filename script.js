@@ -1,6 +1,6 @@
 // ====== KONFIGURASI (edit di sini) ======
-const KAS_URL = "https://kas-si01a.vercel.app/"; // ganti dengan link web app Kas
-const WA_URL = "https://wa.me/6281234567890?text=Halo%20SI01A"; // ganti nomor WhatsApp (format 62xxxx, tanpa +/0 depan)
+const KAS_URL = "https://kas.sisteminformasi-a.fun/"; // ganti dengan link web app Kas
+const WA_URL = "https://wa.me/628561507488?text=Halo%20SI01A"; // ganti nomor WhatsApp (format 62xxxx, tanpa +/0 depan)
 const MEMBERS = [
   { nama: "Lulu Kamaludin", nim: "2627572010002", peran: "Ketua Kelas" },
   { nama: "Ahmad Yusuf", nim: "2627572010004", peran: "Wakil Ketua Kelas" },
