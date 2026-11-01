@@ -411,14 +411,14 @@ if (bd) {
       .slice(0, 3)
       .map(
         ([x, i]) =>
-          `<a href="?id=${i}" class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"><div class="relative aspect-[16/10] overflow-hidden" style="background:linear-gradient(135deg,${x[3]},${x[4]})"><img src="${B}asset/berita/berita-${i + 1}.webp" alt="" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover"></div><div class="p-5"><span class="text-xs font-bold uppercase tracking-widest text-teal">${x[0]}</span><h4 class="font-semibold leading-snug my-1">${x[1]}</h4><p class="text-sm text-slate-500">${x[2]}</p></div></a>`,
+          `<a href="?id=${i}" class="group flex items-center gap-4 bg-white rounded-lg p-3 shadow-md hover:shadow-xl transition"><div class="relative shrink-0 w-28 sm:w-36 aspect-[4/3] overflow-hidden rounded" style="background:linear-gradient(135deg,${x[3]},${x[4]})"><img src="${B}asset/berita/berita-${i + 1}.webp" alt="" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"></div><div class="min-w-0 flex-1"><span class="text-xs font-bold uppercase tracking-widest text-teal">${x[0]}</span><h4 class="font-semibold leading-snug my-1 line-clamp-2 group-hover:text-teal transition-colors">${x[1]}</h4><p class="text-sm text-slate-500">${x[2]}</p></div></a>`,
       )
       .join("");
     bd.innerHTML = `<article class="max-w-3xl mx-auto"><a href="${B}index.html#news" class="inline-flex items-center gap-2 text-sm font-semibold text-teal mb-6 hover:gap-3 transition-all"><i class="bi bi-arrow-left"></i> Kembali ke News</a>
   <div class="relative aspect-[16/9] rounded-lg overflow-hidden mb-10" style="background:linear-gradient(135deg,${n[3]},${n[4]})"><img src="${B}asset/berita/berita-${id + 1}.webp" alt="" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover"></div>
   <div class="space-y-5 text-lg text-slate-700 leading-relaxed">${n[5].map((t) => `<p>${t}</p>`).join("")}</div>
   <div class="flex flex-wrap gap-4 mt-12 pt-8 border-t border-slate-200">${nav(id - 1, "Sebelumnya")}${nav(id + 1, "Berikutnya")}</div></article>
-  <div class="max-w-[1400px] mx-auto mt-20"><h3 class="font-display uppercase text-3xl lg:text-4xl mb-8">Berita Lainnya</h3><div class="grid gap-6 md:grid-cols-3">${more}</div></div>`;
+  <div class="max-w-[1400px] mx-auto mt-20"><h3 class="font-display uppercase text-3xl lg:text-4xl mb-8">Berita Lainnya</h3><div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">${more}</div></div>`;
   }
 }
 // ====== ANIMASI GSAP (aman: konten tetap tampil walau animasi gagal) ======
