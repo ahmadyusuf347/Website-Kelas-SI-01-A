@@ -112,21 +112,21 @@ const NEWS = [
 ];
 const HERO = [
   {
-    img: "kelassi1.jpeg",
+    img: "kelassi1.avif",
     t: "Selamat datang di kelas SI01A",
     d: "Website resmi kelas Sistem Informasi 01A — informasi, kolaborasi, dan cerita kami dalam satu tempat.",
     b: "Kenali kelas kami",
     h: "index.html#profile",
   },
   {
-    img: "kelassi2.jpeg",
+    img: "kelassi2.avif",
     t: "Kompak, kreatif & berkolaborasi",
     d: "Kenalan dengan seluruh mahasiswa SI01A yang siap tumbuh dan berkarya bersama.",
     b: "Lihat members",
     h: "halaman/members.html",
   },
   {
-    img: "kelassi3.jpeg",
+    img: "kelassi3.avif",
     t: "Kas kelas yang transparan",
     d: "Pantau pemasukan dan pengeluaran kas kelas secara terbuka melalui web app khusus.",
     b: "Buka kas",
@@ -260,7 +260,7 @@ const memCards = (l) =>
   l
     .map(
       (m, i) =>
-        `<div class="mem group text-center"><div class="relative aspect-[4/5] overflow-hidden bg-slate-200"><div class="absolute inset-0 grid place-items-center text-white text-6xl font-bold" style="background:${hue(i)}">${ini(m.nama)}</div><img src="${B}asset/members/${m.nim}.webp" alt="${m.nama}" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"><div class="soc absolute inset-x-0 bottom-0 pt-12 pb-4 flex justify-center gap-2 bg-gradient-to-t from-dark/90 to-transparent translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">${["instagram", "linkedin", "envelope"].map((c) => `<a href="#" aria-label="${c}" class="w-9 h-9 rounded-full bg-white text-dark grid place-items-center hover:bg-lime transition"><i class="bi bi-${c}"></i></a>`).join("")}</div></div><h4 class="mt-5 font-bold text-lg leading-snug">${m.nama}</h4><p class="text-teal text-sm font-semibold uppercase tracking-wider mt-1">${m.peran}</p><p class="text-xs text-slate-500">${m.nim}</p></div>`,
+        `<div class="mem group text-center"><div class="relative aspect-[4/5] overflow-hidden bg-slate-200"><div class="absolute inset-0 grid place-items-center text-white text-6xl font-bold" style="background:${hue(i)}">${ini(m.nama)}</div><img src="${B}asset/members/${m.nim}.avif" alt="${m.nama}" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"><div class="soc absolute inset-x-0 bottom-0 pt-12 pb-4 flex justify-center gap-2 bg-gradient-to-t from-dark/90 to-transparent translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">${["instagram", "linkedin", "envelope"].map((c) => `<a href="#" aria-label="${c}" class="w-9 h-9 rounded-full bg-white text-dark grid place-items-center hover:bg-lime transition"><i class="bi bi-${c}"></i></a>`).join("")}</div></div><h4 class="mt-5 font-bold text-lg leading-snug">${m.nama}</h4><p class="text-teal text-sm font-semibold uppercase tracking-wider mt-1">${m.peran}</p><p class="text-xs text-slate-500">${m.nim}</p></div>`,
     )
     .join("");
 // Mobile/sentuh: tombol sosmed muncul saat kartu di-tap
