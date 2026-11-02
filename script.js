@@ -157,7 +157,7 @@ const cta = (c) =>
 $("#site-header").innerHTML =
   `<header id="hdr" class="fixed top-0 inset-x-0 z-50 text-white transition-colors duration-300 bg-gradient-to-b from-black/40 to-transparent">
 <div class="flex items-center justify-between h-20 px-5 lg:px-20">
-<a href="${B}index.html" class="relative z-[70]"><img src="${B}asset/Logo2.svg" alt="SI01A" class="h-10 w-auto"></a>
+<a href="${B}index.html" class="relative z-[70]"><img src="${B}asset/SI01ALOGO2.png" alt="SI01A" class="h-14 w-auto"></a>
 <nav id="menu" class="fixed inset-0 w-full h-screen bg-dark z-[60] flex flex-col justify-center gap-1 px-8 sm:px-16 lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:flex-row lg:items-center lg:gap-8 lg:p-0">
 ${NAV.map((n) => `<a href="${B + n[1]}" class="menu-link font-display uppercase tracking-wide text-4xl py-3 border-b border-white/15 max-lg:hover:text-lime lg:font-sans lg:normal-case lg:tracking-normal lg:text-[15px] lg:font-medium lg:py-1 lg:border-0">${n[0]}</a>`).join("")}
 ${cta("menu-link mt-8 inline-flex justify-center sm:hidden")}</nav>
@@ -231,7 +231,7 @@ const fl = (t, h) =>
   `<li><a href="${h}" class="group inline-flex items-center gap-2 py-1 hover:text-lime transition"><i class="bi bi-chevron-right text-xs opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all"></i>${t}</a></li>`;
 $("#site-footer").innerHTML = `<footer class="bg-[#06191a] text-white/80 pt-16">
 <div class="max-w-[1400px] mx-auto px-5 lg:px-20"><div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-<div class="lg:col-span-2"><img src="${B}asset/Logo2.svg" class="h-12 w-auto mb-5" alt=""><p class="max-w-sm">Kelas Sistem Informasi 01A — belajar, berkolaborasi, dan bertumbuh bersama.</p>
+<div class="lg:col-span-2"><img src="${B}asset/SI01ALOGO2.png" class="h-16 w-auto mb-5" alt=""><p class="max-w-sm">Kelas Sistem Informasi 01A — belajar, berkolaborasi, dan bertumbuh bersama.</p>
 <div class="flex gap-3 mt-6 text-lg">${["instagram", "youtube", "linkedin", "twitter-x", "tiktok"].map((i) => `<a href="#" aria-label="${i}" class="w-10 h-10 rounded-full border border-white/30 grid place-items-center hover:bg-lime hover:text-dark hover:border-lime transition"><i class="bi bi-${i}"></i></a>`).join("")}</div></div>
 <div><h5 class="text-white font-semibold uppercase tracking-widest text-sm mb-4">Kelas</h5><ul>${NAV.slice(
   1,
