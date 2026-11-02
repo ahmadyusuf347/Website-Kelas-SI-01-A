@@ -15,7 +15,7 @@ const MEMBERS = [
   {
     nama: "Arman Agustian",
     nim: "2627572010003",
-    peran: "Perlengkapan & Logisrik",
+    peran: "Perlengkapan & Logistik",
   },
   { nama: "Junior Putra Santosa", nim: "2627572010001", peran: "Anggota" },
   { nama: "M. Huzayfahtun Najmi", nim: "2627572010007", peran: "Anggota" },
@@ -329,7 +329,7 @@ if (hr && !window.gsap) {
 if (hr && window.gsap) {
   hr.innerHTML = `${HERO.map((s, i) => `<div class="slide absolute inset-0 bg-cover bg-center" style="background-image:url(asset/${s.img});opacity:${i ? 0 : 1}"></div>`).join("")}
  <div class="absolute inset-0 bg-[#0b4f4c]/75"></div><div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20"></div>
- <div class="relative h-full flex flex-col justify-center px-5 lg:px-20 pt-16 pb-24"><h1 id="h-t" class="font-display uppercase leading-[.98] text-5xl sm:text-7xl lg:text-[6.5rem] max-w-5xl"></h1><p id="h-d" class="mt-6 mb-9 max-w-2xl text-lg sm:text-2xl text-white/90"></p><div id="h-b"></div></div>
+ <div class="relative h-full flex flex-col justify-end px-5 lg:px-20 pb-28 lg:pb-32"><h1 id="h-t" class="font-display uppercase leading-[.98] text-5xl sm:text-7xl lg:text-[6.5rem] max-w-5xl"></h1><p id="h-d" class="mt-6 mb-9 max-w-2xl text-lg sm:text-2xl text-white/90"></p><div id="h-b"></div></div>
  <div class="absolute bottom-8 inset-x-5 lg:inset-x-20 flex items-center gap-4"><div class="flex gap-2 flex-1 max-w-md">${HERO.map((_, i) => `<button data-i="${i}" aria-label="Slide ${i + 1}" class="seg flex-1 h-1.5 bg-white/30 rounded overflow-hidden"><span class="block h-full w-0 bg-lime"></span></button>`).join("")}</div>
  <div class="ml-auto flex gap-2"><button id="hp" aria-label="Sebelumnya" class="w-12 h-12 rounded-full border border-white/60 grid place-items-center text-xl hover:bg-lime hover:text-dark hover:border-lime transition"><i class="bi bi-arrow-left"></i></button><button id="hn" aria-label="Berikutnya" class="w-12 h-12 rounded-full border border-white/60 grid place-items-center text-xl hover:bg-lime hover:text-dark hover:border-lime transition"><i class="bi bi-arrow-right"></i></button></div></div>`;
   const sl = hr.querySelectorAll(".slide"),
